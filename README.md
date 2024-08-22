@@ -4,7 +4,7 @@ This lib allow to connect a Growatt hybrid inverter and retrieve some datas via 
 
 It also provide a command-line command to query the inverter
 
-#Command Line example :
+# Command Line example :
 ``` $ growatt -d /dev/ttyUSB1
 {'GRID_VOLTAGE': 0.0, 'GRID_FREQUENCY': 0.0, 'GRID_ACTIVE_POWER': 0.0, 'GRID_APP_POWER': 0.0}
 {'AC_OUTPUT_VOLTAGE': 229.4, 'AC_OUTPUT_CURRENT': 1.4, 'AC_OUTPUT_FREQUENCY': 49.99, 'AC_OUTPUT_ACTIVE_POWER': 262.0, 'AC_OUTPUT_APP_POWER': 321.0, 'AC_OUTPUT_LOAD_PERCENT': 5.2}
@@ -15,7 +15,7 @@ It also provide a command-line command to query the inverter
 {'FAN_SPEED_MPPT': 0, 'FAN_SPEED_INV': 26}
 ```
 
-#Python Example :
+# Python Example :
 ```from pymodbus.client.sync import ModbusSerialClient as ModbusClient
 from growatt import Growatt
 
