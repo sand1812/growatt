@@ -4,5 +4,8 @@ setup(name='growatt',
       packages=find_packages(include=['growatt']),
       version='0.1.0',
       description='Python Library for Growatt SPF5000ES',
-      author='Greg Giannoni')
+      author='Greg Giannoni',
+      entry_points = {
+              'console_scripts': ['growatt=growatt:main'],
+          })
 
