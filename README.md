@@ -12,7 +12,8 @@ It also provide a command-line command to query the inverter
 {'BUS_VOLTAGE': 418.9}
 {'INV_TEMP': 30.8, 'DCDC_TEMP': 25.4, 'BUCK1_TEMP': 26.2, 'BUCK2_TEMP': 31.2}
 {'PV1_INPUT_POWER': 0.0, 'PV2_INPUT_POWER': 0.0, 'PV1_INPUT_VOLTAGE': 0.0, 'PV2_INPUT_VOLTAGE': 0.0}
-{'FAN_SPEED_MPPT': 0, 'FAN_SPEED_INV': 26}```
+{'FAN_SPEED_MPPT': 0, 'FAN_SPEED_INV': 26}
+```
 
 #Python Example :
 ```from pymodbus.client.sync import ModbusSerialClient as ModbusClient
