@@ -47,7 +47,12 @@ print (inverter.getInfosFan())
 ```
 
 
+# Requirements
 
+pymodbus(2.3.0) is required. Newer versions not supported yet.
+
+This lib have been tested on:
+* Python 3.12.3 with Ubuntu Xenial on Nanopi M1+ 
 
 
 # Improvements
