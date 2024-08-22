@@ -7,6 +7,7 @@ from pymodbus.client.sync import ModbusSerialClient as ModbusClient
 import datetime
 from pymodbus.exceptions import ModbusIOException
 from pymodbus.register_read_message import ReadInputRegistersResponse,ReadHoldingRegistersResponse
+import argparse
 
 HOLDINGS = {0  : {'name':'On/Off',
                   'description':'The Standby On/Off state and the AC output DisEN/EN state; The low byte is the Standby on/off(1/0), the high byte is the AC output disable/enable (1/0).',
@@ -1023,6 +1024,30 @@ class Growatt:
         return ret
 
 
+
+
+def command_line():
+    parser = argparse.ArgumentParser(prog='Growatt',
+                                     description='Query Growatt hybrid inverter',
+                                     epilog='')
+    parser.add_argument('-d', '--device',required=True)
+    args = parser.parse_args()
+    client = ModbusClient(method='rtu', port=args.device, baudrate=9600, stopbits=1, parity='N', bytesize=8, timeout=1)
+    client.connect()
+    g = Growatt(client,"Inverter",1)
+    g.readStatus()
+    print (g.getInfosGrid())
+    print (g.getInfosOutput())
+    print (g.getInfosBattery())
+    print (g.getInfosBus())
+    print (g.getInfosTemp())
+    print (g.getInfosPV())
+    print (g.getInfosFan())
+    
+    
+    
+
+    
 if __name__ == '__main__' :
     client = ModbusClient(method='rtu', port='/dev/ttyUSB1', baudrate=9600, stopbits=1, parity='N', bytesize=8, timeout=1)
     client.connect()
