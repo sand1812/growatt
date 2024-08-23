@@ -1015,7 +1015,8 @@ class Growatt:
         ret = {'PV1_INPUT_POWER'   : self.getStatus('Ppv1 L')['value']+self.getStatus('Ppv1 H')['value']*65536,
                'PV2_INPUT_POWER'   : self.getStatus('Ppv2 L')['value']+self.getStatus('Ppv2 H')['value']*65536,
                'PV1_INPUT_VOLTAGE' : self.getStatus('Vpv1')['value'],
-               'PV2_INPUT_VOLTAGE' : self.getStatus('Vpv2')['value']}
+               'PV2_INPUT_VOLTAGE' : self.getStatus('Vpv2')['value'],
+               'PV_INPUT_POWER'    : self.getStatus('Ppv1 L')['value']+self.getStatus('Ppv1 H')['value']*65536+self.getStatus('Ppv2 L')['value']+self.getStatus('Ppv2 H')['value']*65536}
         return ret
 
     def getInfosFan(self) :
